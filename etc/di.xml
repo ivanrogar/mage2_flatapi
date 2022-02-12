@@ -23,4 +23,24 @@
             </argument>
         </arguments>
     </type>
+
+    <type name="JohnRogar\FlatApi\Model\Provider\Catalog\ProductProvider">
+        <arguments>
+            <argument name="objectRepository" xsi:type="object">
+                JohnRogar\FlatApi\Model\Repository\ProductRepository
+            </argument>
+        </arguments>
+    </type>
+
+    <preference for="JohnRogar\FlatApi\Api\FlatApiInterface" type="JohnRogar\FlatApi\Model\FlatApi"/>
+
+    <type name="JohnRogar\FlatApi\Model\FlatApi">
+        <arguments>
+            <argument name="providers" xsi:type="array">
+                <item name="products" xsi:type="object">
+                    JohnRogar\FlatApi\Model\Provider\Catalog\ProductProvider
+                </item>
+            </argument>
+        </arguments>
+    </type>
 </config>

@@ -52,4 +52,19 @@ class ResultSet
             yield $item;
         }
     }
+
+    public function toArray(): array
+    {
+        $items = [];
+
+        foreach ($this->getItems() as $item) {
+            $items[] = $item->getData();
+        }
+
+        return [
+            'items' => $items,
+            'totalPages' => $this->getTotalPages(),
+            'totalItems' => $this->getTotalItems(),
+        ];
+    }
 }

@@ -51,7 +51,7 @@ class MongoManager implements ManagerInterface
         $items = [];
 
         if ($totalItems) {
-            $totalPages = round($totalItems / $size);
+            $totalPages = (int)ceil($totalItems / $size);
 
             if ($totalPages < 1) {
                 $totalPages = 1;
@@ -95,7 +95,12 @@ class MongoManager implements ManagerInterface
                         ]
                     );
 
-                $items = $cursor->toArray();
+                $items = [];
+
+                foreach ($cursor as $item) {
+                    unset($item['_id']);
+                    $items[] = new Dto((array)\json_decode(\json_encode($item), true));
+                }
             }
         }
 
