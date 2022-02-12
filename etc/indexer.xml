@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Indexer/etc/indexer.xsd">
+    <indexer id="flat_api_catalog_product" view_id="flat_api_catalog_product_view" class="JohnRogar\FlatApi\Indexer\Catalog\Product"
+             primary="flat_api_catalog_config">
+        <title>Flat API products</title>
+        <description>Rebuild the flat API product data</description>
+    </indexer>
+</config>

@@ -1,0 +1,22 @@
+{
+    "name": "johnrogar/mage2_flatapi",
+    "description": "Flat API for Magento 2 which serves denormalized, flattened data",
+    "require": {
+        "php": ">=7.4.0",
+        "magento/framework": ">=103.0.0",
+        "mongodb/mongodb": "^1.0"
+    },
+    "type": "magento2-module",
+    "version": "1.0.0",
+    "license": [
+        "proprietary"
+    ],
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "JohnRogar\\FlatApi\\": ""
+        }
+    }
+}

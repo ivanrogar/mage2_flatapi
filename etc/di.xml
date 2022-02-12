@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+
+    <type name="JohnRogar\FlatApi\Indexer\SaveHandler\ProductSaveHandler">
+        <arguments>
+            <argument name="dumper" xsi:type="object">
+                JohnRogar\FlatApi\Model\Dumper\Catalog\Product
+            </argument>
+
+            <argument name="objectRepository" xsi:type="object">
+                JohnRogar\FlatApi\Model\Repository\ProductRepository
+            </argument>
+        </arguments>
+    </type>
+
+    <type name="JohnRogar\FlatApi\Model\Manager\Pool">
+        <arguments>
+            <argument name="managers" xsi:type="array">
+                <item name="mongo" xsi:type="object">
+                    JohnRogar\FlatApi\Model\Manager\MongoManager
+                </item>
+            </argument>
+        </arguments>
+    </type>
+</config>
